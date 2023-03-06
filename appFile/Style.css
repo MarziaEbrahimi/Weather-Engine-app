@@ -1,11 +1,15 @@
 .body {
   font-family: Google Sans, Roboto, arial, sans-serif;
 }
+h6 {
+  text-align: right;
+}
 .weather-border {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #70757a;
+  border-radius: 10px;
 }
 
 .pic {
