@@ -15,69 +15,74 @@
   <link rel="stylesheet" href="appFile/Style.css" />
   <body>
     <div class="continer">
-      <div class="weather-border">
-        <span class="button-search">
-          <input type="search" placeholder="Enter a City" />
-          <button>Search</button>
-        </span>
-        <h6><small>Result for </small> for Philadelphia, PA 19139</h6>
-        <div class="row">
-          <div class="col-4">
-            <img src="appFile/sunny.png" alt="cloud" />
-            <span> <strong class="selsuce-temp">24</strong> </span>℃ |
-            <span class="Fahrenheit-temp"> <a href="#">℉</a> </span>
+      <div class="weather-wrapper">
+        <div class="weather-border">
+          <span class="button-search">
+            <input type="search" placeholder="Enter a City" />
+            <button>Search</button>
+          </span>
+          <h6><small>Result for </small> for Philadelphia, PA 19139</h6>
+          <div class="row">
+            <div class="col-4">
+              <div class="selsuce-temp">
+                <img src="appFile/sunny.png" alt="cloud" />
+                <strong>24</strong>
+                <small> ℃ | ℉ </small>
+              </div>
+            </div>
+            <div class="col-4">
+              <ul class="humidity">
+                <li>precipitation: 4%</li>
+                <li>Humidity: 34%</li>
+                <li>Wind: 11 Km/h</li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <ul class="sky">
+                <li>Weather</li>
+                <li>Wednesday 12:20</li>
+                <li>Cloudy</li>
+              </ul>
+            </div>
           </div>
-          <div class="col-4">
-            <ul class="humidity">
-              <li>precipitation: 4%</li>
-              <li>Humidity: 34%</li>
-              <li>Wind: 11 Km/h</li>
-            </ul>
-          </div>
-          <div class="col-4">
-            <ul class="sky">
-              <li>Weather</li>
-              <li>Wednesday 12:20</li>
-              <li>Cloudy</li>
-            </ul>
+          <div>Temprature | Precipitation | Wind |</div>
+          <hr />
+
+          <div class="row" id="dayName">
+            <div class="col-2">
+              <p>Thu</p>
+              <img class="pic" src="appFile/half-sunny.png" alt="Raining" />
+              <p>°1<strong>°8</strong></p>
+            </div>
+            <div class="col-2">
+              <p>Thu</p>
+              <img class="pic" src="appFile/small sun.png" alt="Raining" />
+              <p>°12 <strong>°7</strong></p>
+            </div>
+            <div class="col-2">
+              <p>Fri</p>
+              <img class="pic" src="appFile/Cloudy.png" alt="Raining" />
+              <p>°13 <strong>°8</strong></p>
+            </div>
+            <div class="col-2">
+              <p>Sat</p>
+              <img class="pic" src="appFile/raining.png" alt="Raining" />
+              <p>°9 <strong>°3</strong></p>
+            </div>
+            <div class="col-2">
+              <p>Sun</p>
+              <img class="pic" src="appFile/heavy raining.png" alt="Raining" />
+              <p>°11 <strong>°5</strong></p>
+            </div>
+
+            <div class="col-2">
+              <p>Mon</p>
+              <img class="pic" src="appFile/raining.png" alt="Raining" />
+              <p>°14<strong>°3</strong></p>
+            </div>
           </div>
         </div>
-        <div>Temprature | Precipitation | Wind |</div>
-        <hr />
 
-        <div class="row" id="dayName">
-          <div class="col-2">
-            <p>Thu</p>
-            <img class="pic" src="appFile/half-sunny.png" alt="Raining" />
-            <p>°1<strong>°8</strong></p>
-          </div>
-          <div class="col-2">
-            <p>Thu</p>
-            <img class="pic" src="appFile/small sun.png" alt="Raining" />
-            <p>°12 <strong>°7</strong></p>
-          </div>
-          <div class="col-2">
-            <p>Fri</p>
-            <img class="pic" src="appFile/Cloudy.png" alt="Raining" />
-            <p>°13 <strong>°8</strong></p>
-          </div>
-          <div class="col-2">
-            <p>Sat</p>
-            <img class="pic" src="appFile/raining.png" alt="Raining" />
-            <p>°9 <strong>°3</strong></p>
-          </div>
-          <div class="col-2">
-            <p>Sun</p>
-            <img class="pic" src="appFile/heavy raining.png" alt="Raining" />
-            <p>°11 <strong>°5</strong></p>
-          </div>
-
-          <div class="col-2">
-            <p>Mon</p>
-            <img class="pic" src="appFile/raining.png" alt="Raining" />
-            <p>°14<strong>°3</strong></p>
-          </div>
-        </div>
         <small>
           <a
             href="https://github.com/MarziaEbrahimi/Weather-Engine-app"
@@ -87,9 +92,8 @@
           >
           by Marzia Ebrahimi
         </small>
-
-        <script src="appFile/Java.js"></script>
       </div>
     </div>
+    <script src="appFile/Java.js"></script>
   </body>
 </html>
