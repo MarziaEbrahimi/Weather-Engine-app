@@ -1,3 +1,33 @@
-h1{
-    color: aqua;
+.body {
+  font-family: Google Sans, Roboto, arial, sans-serif;
+}
+.weather-border {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #70757a;
+}
+
+.pic {
+  position: relative;
+  margin-left: -10%;
+}
+#dayName {
+  cursor: pointer;
+  padding-left: 35px;
+  padding-top: 50px;
+}
+
+.humidity {
+  font-size: smaller;
+  color: #70757a;
+  list-style-type: none;
+  position: relative;
+  margin-left: -50%;
+}
+.sky {
+  font-size: medium;
+  color: #70757a;
+  list-style-type: none;
+  text-align: right;
 }
