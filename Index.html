@@ -10,6 +10,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <title>Weather Engine</title>
   </head>
   <link rel="stylesheet" href="appFile/Style.css" />
@@ -21,12 +22,12 @@
             <input type="search" placeholder="Enter a City" />
             <button>Search</button>
           </span>
-          <h6><small>Result for </small> for Philadelphia, PA 19139</h6>
+          <h6></h6>
           <div class="row">
             <div class="col-4">
               <div class="selsuce-temp">
                 <img src="appFile/sunny.png" alt="cloud" />
-                <strong>24</strong>
+                <strong id="show-degree">24</strong>
                 <small> ℃ | ℉ </small>
               </div>
             </div>
@@ -39,7 +40,7 @@
             </div>
             <div class="col-4">
               <ul class="sky">
-                <li>Weather</li>
+                <li id="country">Weather</li>
                 <li>Wednesday 12:20</li>
                 <li>Cloudy</li>
               </ul>
