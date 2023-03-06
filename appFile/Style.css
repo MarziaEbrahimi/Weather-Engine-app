@@ -3,6 +3,7 @@
 }
 h6 {
   text-align: right;
+  margin-top: -4%;
 }
 .weather-border {
   max-width: 800px;
@@ -10,6 +11,15 @@ h6 {
   padding: 20px;
   border: 1px solid #70757a;
   border-radius: 10px;
+}
+.selsuce-temp {
+  position: relative;
+  margin-top: 10%;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+img {
+  margin-top: 6%;
 }
 
 .pic {
@@ -27,7 +37,8 @@ h6 {
   color: #70757a;
   list-style-type: none;
   position: relative;
-  margin-left: -50%;
+  margin-left: -45%;
+  margin-top: 10%;
 }
 .sky {
   font-size: medium;
