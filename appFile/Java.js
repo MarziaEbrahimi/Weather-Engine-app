@@ -8,7 +8,7 @@ function Temprature(response) {
   let skyCloudy = document.querySelector("#sky-cloudy");
   skyCloudy.innerHTML = response.data.weather[0].main;
   let windSky = document.querySelector("#winddy");
-  windSky.innerHTML = `${response.data.wind.speed} Km/h`;
+  windSky.innerHTML = `${Math.round(response.data.wind.speed)} Km/h`;
   let humidityDescrip = document.querySelector("#humidity-temp");
   humidityDescrip.innerHTML = `humidity ${response.data.main.humidity} %`;
   let skyLook = document.querySelector("#skyLook");
@@ -52,8 +52,19 @@ let monthsName = [
 let month = monthsName[now.getMonth()];
 let weekDay = document.querySelector("#my-day");
 weekDay.innerHTML = weekDays[now.getDay()];
+
+function formatTime(now) {
+  let hour = now.getHours();
+  if (hour < 10) {
+    ` 0 ${hour}`;
+  }
+  let minute = now.getMinutes();
+  if (minute < 10) {
+    `0 ${minute}`;
+  }
+}
 let timeDay = document.querySelector("#myHour");
-timeDay.innerHTML = ` ${hour} : ${minute}`;
+timeDay.innerHTML = formatTime(now);
 
 console.log(hour);
 console.log(minute);

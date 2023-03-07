@@ -45,10 +45,12 @@ h6 {
   position: relative;
   margin-left: -33%;
   margin-top: 10%;
+  text-transform: capitalize;
 }
 .sky {
   font-size: medium;
   color: #70757a;
   list-style-type: none;
   text-align: right;
+  text-transform: capitalize;
 }
