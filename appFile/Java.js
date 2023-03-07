@@ -1,3 +1,10 @@
+function formatTime(nowTime) {
+  let date = new Date(nowTime);
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  return `${hour}:${minute}`;
+}
+
 function Temprature(response) {
   let degreeElement = document.querySelector("#show-degree");
   degreeElement.innerHTML = Math.round(response.data.main.temp);
@@ -13,6 +20,10 @@ function Temprature(response) {
   humidityDescrip.innerHTML = `humidity ${response.data.main.humidity} %`;
   let skyLook = document.querySelector("#skyLook");
   skyLook.innerHTML = response.data.weather[0].description;
+  let timeDay = document.querySelector("#myHour");
+  timeDay.innerHTML = formatTime(response.data.dt * 1000);
+
+  console.log(response.data.dt);
 }
 
 let apiKey = "9666cb098baebeb992cfd789750f6f47";
@@ -22,8 +33,6 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appi
 axios.get(apiUrl).then(Temprature);
 
 let now = new Date();
-let hour = now.getHours();
-let minute = now.getMinutes();
 let weekDays = [
   "Sunday",
   "Monday",
@@ -52,19 +61,6 @@ let monthsName = [
 let month = monthsName[now.getMonth()];
 let weekDay = document.querySelector("#my-day");
 weekDay.innerHTML = weekDays[now.getDay()];
-
-function formatTime(now) {
-  let hour = now.getHours();
-  if (hour < 10) {
-    ` 0 ${hour}`;
-  }
-  let minute = now.getMinutes();
-  if (minute < 10) {
-    `0 ${minute}`;
-  }
-}
-let timeDay = document.querySelector("#myHour");
-timeDay.innerHTML = formatTime(now);
 
 console.log(hour);
 console.log(minute);

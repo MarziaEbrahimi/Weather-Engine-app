@@ -45,6 +45,8 @@ h6 {
   position: relative;
   margin-left: -33%;
   margin-top: 10%;
+}
+.humidity ::first-letter {
   text-transform: capitalize;
 }
 .sky {
