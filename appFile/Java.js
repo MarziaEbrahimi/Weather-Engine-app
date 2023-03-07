@@ -22,8 +22,6 @@ function Temprature(response) {
   skyLook.innerHTML = response.data.weather[0].description;
   let timeDay = document.querySelector("#myHour");
   timeDay.innerHTML = formatTime(response.data.dt * 1000);
-
-  console.log(response.data.dt);
 }
 
 let apiKey = "9666cb098baebeb992cfd789750f6f47";
@@ -61,6 +59,3 @@ let monthsName = [
 let month = monthsName[now.getMonth()];
 let weekDay = document.querySelector("#my-day");
 weekDay.innerHTML = weekDays[now.getDay()];
-
-console.log(hour);
-console.log(minute);
