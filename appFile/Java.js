@@ -22,11 +22,17 @@ function Temprature(response) {
   skyLook.innerHTML = response.data.weather[0].description;
   let timeDay = document.querySelector("#myHour");
   timeDay.innerHTML = formatTime(response.data.dt * 1000);
+  let iconElement = document.querySelector("#sky-icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   console.log(response.data);
 }
 
 let apiKey = "9666cb098baebeb992cfd789750f6f47";
-let cityName = "Philadelphia";
+let cityName = "Kabul";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(Temprature);
