@@ -32,7 +32,7 @@ function Temprature(response) {
 }
 
 let apiKey = "9666cb098baebeb992cfd789750f6f47";
-let cityName = "Kabul";
+let cityName = "Philadelphia";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(Temprature);
