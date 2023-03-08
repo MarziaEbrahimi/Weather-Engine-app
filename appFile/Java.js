@@ -28,14 +28,18 @@ function Temprature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  console.log(response.data);
 }
-
-let apiKey = "9666cb098baebeb992cfd789750f6f47";
-let cityName = "Philadelphia";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
-
-axios.get(apiUrl).then(Temprature);
+function search(cityName) {
+  let apiKey = "9666cb098baebeb992cfd789750f6f47";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(Temprature);
+}
+function formSearch(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#input-city");
+  search(cityElement.value);
+}
+search("Kabul");
 
 let now = new Date();
 let year = now.getFullYear();
@@ -70,3 +74,6 @@ let monthDay = document.querySelector("#my-month");
 monthDay.innerHTML = monthsName[now.getMonth()];
 let years = document.querySelector("#my-year");
 years.innerHTML = now.getFullYear();
+
+let form = document.querySelector("#input-form");
+form.addEventListener("submit", formSearch);
