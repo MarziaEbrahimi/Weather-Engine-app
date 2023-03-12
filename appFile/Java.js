@@ -29,6 +29,7 @@ function Temprature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 function search(cityName) {
   let apiKey = "9666cb098baebeb992cfd789750f6f47";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
