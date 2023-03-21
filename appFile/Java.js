@@ -4,6 +4,11 @@ function formatTime(nowTime) {
   let minute = date.getMinutes();
   return `last updated ${hour}:${minute}`;
 }
+function getDailyforecast(coordinates) {
+  let apiKey = "9666cb098baebeb992cfd789750f6f47";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(dailyForecast);
+}
 
 function Temprature(response) {
   let degreeElement = document.querySelector("#show-degree");
@@ -28,6 +33,7 @@ function Temprature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getDailyforecast(response.data.coord);
 }
 
 function search(cityName) {
@@ -41,7 +47,7 @@ function formSearch(event) {
   search(cityElement.value);
 }
 
-function dailyForecast() {
+function dailyForecast(response) {
   let daynameElement = document.querySelector("#dayName");
   let days = ["Wed", "Thus", "Fri", "Sat", "Sun", "Mon"];
   let daynameHTML = `<div class="row">`;
@@ -61,7 +67,7 @@ function dailyForecast() {
 }
 
 search("Kabul");
-dailyForecast();
+
 let now = new Date();
 let year = now.getFullYear();
 let weekDays = [
