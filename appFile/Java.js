@@ -41,7 +41,7 @@ function formSearch(event) {
   search(cityElement.value);
 }
 
-function dalyForecast() {
+function dailyForecast() {
   let daynameElement = document.querySelector("#dayName");
   let days = ["Wed", "Thus", "Fri", "Sat", "Sun", "Mon"];
   let daynameHTML = `<div class="row">`;
@@ -61,7 +61,7 @@ function dalyForecast() {
 }
 
 search("Kabul");
-dalyForecast();
+dailyForecast();
 let now = new Date();
 let year = now.getFullYear();
 let weekDays = [
