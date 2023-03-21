@@ -40,8 +40,28 @@ function formSearch(event) {
   let cityElement = document.querySelector("#input-city");
   search(cityElement.value);
 }
-search("Kabul");
 
+function dalyForecast() {
+  let daynameElement = document.querySelector("#dayName");
+  let days = ["Wed", "Thus", "Fri", "Sat", "Sun", "Mon"];
+  let daynameHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    daynameHTML =
+      daynameHTML +
+      `
+    <div class="col-2">
+                <p>${day}</p>
+                <img class="pic" src="appFile/half-sunny.png" alt="Raining" />
+                <p>°1<strong>°8</strong></p>
+                </div>
+                `;
+  });
+  daynameHTML = daynameHTML + `</div>`;
+  daynameElement.innerHTML = daynameHTML;
+}
+
+search("Kabul");
+dalyForecast();
 let now = new Date();
 let year = now.getFullYear();
 let weekDays = [
