@@ -47,21 +47,34 @@ function formSearch(event) {
   let cityElement = document.querySelector("#input-city");
   search(cityElement.value);
 }
+function formatDay(timetamp) {
+  let date = new Date(timetamp * 1000);
+  let day = date.getDay();
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  return days[day];
+}
 
 function dailyForecast(response) {
+  let forecast = response.data.daily;
   let daynameElement = document.querySelector("#dayName");
-  let days = ["Wed", "Thus", "Fri", "Sat", "Sun", "Mon"];
+
   let daynameHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    daynameHTML =
-      daynameHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      daynameHTML =
+        daynameHTML +
+        `
     <div class="col-2">
-                <p>${day}</p>
-                <img class="pic" src="appFile/half-sunny.png" alt="Raining" />
-                <p>°1<strong>°8</strong></p>
+                <p>${formatDay(forecastDay.dt)}</p>
+                <img class="pic" src="https://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" alt="Raining" />
+                <p><strong> ${Math.round(
+                  forecastDay.temp.max
+                )}°</strong>${Math.round(forecastDay.temp.min)} °</p>
                 </div>
                 `;
+    }
   });
   daynameHTML = daynameHTML + `</div>`;
   daynameElement.innerHTML = daynameHTML;
