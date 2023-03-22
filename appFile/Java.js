@@ -4,9 +4,10 @@ function formatTime(nowTime) {
   let minute = date.getMinutes();
   return `last updated ${hour}:${minute}`;
 }
-function getDailyforecast(coordinates) {
-  let apiKey = "9666cb098baebeb992cfd789750f6f47";
+function getdailyForecast(coordinates) {
+  let apiKey = "ce144f0cf51fa43f03431f0488a36728";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
   axios.get(apiUrl).then(dailyForecast);
 }
 
@@ -33,7 +34,7 @@ function Temprature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  getDailyforecast(response.data.coord);
+  getdailyForecast(response.data.coord);
 }
 
 function search(cityName) {
@@ -66,7 +67,7 @@ function dailyForecast(response) {
   daynameElement.innerHTML = daynameHTML;
 }
 
-search("Kabul");
+search("Harat");
 
 let now = new Date();
 let year = now.getFullYear();
